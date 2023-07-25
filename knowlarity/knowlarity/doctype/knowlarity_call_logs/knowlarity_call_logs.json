@@ -1,0 +1,81 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "KCL-.####",
+ "creation": "2023-07-25 20:10:48.851073",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_number",
+  "uuid",
+  "agent_number",
+  "start_time",
+  "call_duration",
+  "call_recording",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_number",
+   "fieldtype": "Data",
+   "label": "Customer Number"
+  },
+  {
+   "fieldname": "uuid",
+   "fieldtype": "Data",
+   "label": "uuid"
+  },
+  {
+   "fieldname": "agent_number",
+   "fieldtype": "Data",
+   "label": "Agent Number"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Data",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "call_duration",
+   "fieldtype": "Data",
+   "label": "Call Duration"
+  },
+  {
+   "fieldname": "call_recording",
+   "fieldtype": "Data",
+   "label": "Call Recording"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-07-25 20:10:48.851073",
+ "modified_by": "Administrator",
+ "module": "Knowlarity",
+ "name": "Knowlarity Call Logs",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
