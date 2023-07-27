@@ -23,8 +23,8 @@ frappe.ui.form.on('Lead', {
                         return;
                     }
 
-                    var currentDatetime = frappe.datetime.now_datetime();
-                    frm.set_value('last_call_on', currentDatetime);
+                    //var currentDatetime = frappe.datetime.now_datetime();
+                    //frm.set_value('last_call_on', currentDatetime);
 
                     // Access the 'isselect' field value and print it
                     var isselectValue = values.isselect;
