@@ -84,7 +84,7 @@ frappe.ui.form.on('Lead', {
             });
         
             var previousUrl = window.location.href;
-            frappe.set_route('Report', 'Knowlarity Call Logs');
+            frappe.set_route('Report', 'Knowlarity Call Log');
             window.history.replaceState({}, document.title, previousUrl);
             window.onpopstate = function(event) {
               window.location.href = previousUrl;
