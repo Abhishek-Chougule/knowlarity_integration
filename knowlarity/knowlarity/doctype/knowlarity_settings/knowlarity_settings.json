@@ -119,7 +119,7 @@
   },
   {
    "fieldname": "account_configuration_tab",
-   "fieldtype": "Tab Break",
+   "fieldtype": "Section Break",
    "label": "Account Configuration"
   },
   {
