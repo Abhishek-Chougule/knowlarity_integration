@@ -236,15 +236,17 @@ def post_call_history(cn,uuid,st,an,cd,cr):
             # for j in km:
             #     if str(j.agent_number)==str(an)[-13:]:
             
-            url = f"https://"+str(current_site)+"/api/resource/Knowlarity Call Logs"
-
-            payload = "{\r\n    \"customer_number\":\""+cn+"\",\r\n    \"uuid\":\""+uuid+"\",\r\n    \"start_time\":\""+st+"\",\r\n    \"agent_number\":\""+str(an)[-13:]+"\",\r\n    \"call_recording\":\""+cr+"\",\r\n    \"status\":\""+str(an)[:-14]+"\",\r\n    \"call_duration\":\""+cd+"\"\r\n}"
-            headers = {
-            'Authorization': f'token '+kas.api_key+':'+kas.api_secret+'',
-            'Content-Type': 'text/plain',
-            'Cookie': 'full_name=Guest; sid=Guest; system_user=no; user_id=Guest; user_image='
-            }
-
-            response = requests.request("POST", url, headers=headers, data=payload)
+            new_knowlarity_call_logs = frappe.new_doc("Knowlarity Call Logs")
+    
+            new_knowlarity_call_logs.customer_number = cn
+            new_knowlarity_call_logs.uuid = uuid
+            new_knowlarity_call_logs.start_time = st
+            new_knowlarity_call_logs.agent_number = str(an)[-13:]
+            new_knowlarity_call_logs.call_recording = cr
+            new_knowlarity_call_logs.status = str(an)[:-14]
+            new_knowlarity_call_logs.call_duration = cd
+            
+        
+            new_knowlarity_call_logs.insert()
 
 #-------------------------------------------------------------------------------------------------------
