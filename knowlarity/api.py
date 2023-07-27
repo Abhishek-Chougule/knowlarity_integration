@@ -131,7 +131,7 @@ def make_call(primary_mobile):
 
 @frappe.whitelist()
 def get_call_details(primary_mobile):
-    
+    get_call_history()
     today = date.today()
     formatted_date = today.strftime("%Y-%m-%d")
 
