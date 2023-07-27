@@ -30,7 +30,7 @@ frappe.ui.form.on('Lead', {
                     var isselectValue = values.isselect;
             
                     console.log('isselect field value:', isselectValue);
-                    if(isselectValue==='+'+(frm.doc.primary_mobile ? frm.doc.primary_mobile : frm.doc.mobile_no)){
+                    if(isselectValue===''+(frm.doc.primary_mobile ? frm.doc.primary_mobile : frm.doc.mobile_no)){
                         frappe.call({
                             method: "knowlarity.api.make_call",
                             args: { "primary_mobile": (frm.doc.primary_mobile ? frm.doc.primary_mobile : frm.doc.mobile_no) },
