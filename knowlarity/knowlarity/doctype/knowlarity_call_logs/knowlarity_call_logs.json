@@ -3,7 +3,6 @@
  "allow_rename": 1,
  "autoname": "KCL-.####",
  "creation": "2023-07-25 20:10:48.851073",
- "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -44,7 +43,7 @@
   },
   {
    "fieldname": "call_recording",
-   "fieldtype": "Data",
+   "fieldtype": "Long Text",
    "label": "Call Recording"
   },
   {
@@ -55,11 +54,10 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-07-25 20:10:48.851073",
+ "modified": "2023-07-28 02:24:55.816284",
  "modified_by": "Administrator",
  "module": "Knowlarity",
  "name": "Knowlarity Call Logs",
- "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -76,6 +74,5 @@
   }
  ],
  "sort_field": "modified",
- "sort_order": "DESC",
- "states": []
+ "sort_order": "DESC"
 }
