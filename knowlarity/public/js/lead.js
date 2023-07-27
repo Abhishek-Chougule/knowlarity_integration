@@ -10,7 +10,7 @@ frappe.ui.form.on('Lead', {
                         click: function() {
                             frappe.call({
                                 method: "knowlarity.api.make_call",
-                                args: { "primary_mobile": frm.doc.primary_mobile },
+                                args: { "primary_mobile": (frm.doc.primary_mobile ? frm.doc.primary_mobile : frm.doc.mobile_no) },
                                 callback: function(r) {}
                             });
 
@@ -38,7 +38,7 @@ frappe.ui.form.on('Lead', {
         frm.add_custom_button(__('Get History'), function () {
             frappe.call({
                 method:"knowlarity.api.get_call_details",
-                args:{"primary_mobile":frm.doc.primary_mobile},
+                args:{"primary_mobile":(frm.doc.primary_mobile ? frm.doc.primary_mobile : frm.doc.mobile_no)},
                 callback:function(r){}
             });
         
