@@ -7,7 +7,7 @@ frappe.ui.form.on('Lead', {
                 fieldtype: 'Data',
                 fieldname: 'isselect',
                 label: 'Enter +Country_Code and Mobile No  E.g. +919000008877',
-                default: '+'+(frm.doc.primary_mobile ? frm.doc.primary_mobile : frm.doc.mobile_no),
+                default: ''+(frm.doc.primary_mobile ? frm.doc.primary_mobile : frm.doc.mobile_no),
             }
         ];
 
