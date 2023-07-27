@@ -26,7 +26,7 @@ frappe.ui.form.on('Contact', {
                             var isselectValue = values.isselect;
                     
                             console.log('isselect field value:', isselectValue);
-                            if(isselectValue===''){
+                            if(isselectValue==='+'){
                                 frappe.call({
                                     method: "knowlarity.api.get_contact",
                                     args: { "userid": frm.doc.email_id },
