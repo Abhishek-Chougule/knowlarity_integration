@@ -132,6 +132,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "fieldname": "enabled_name",
+   "fieldtype": "Data",
+   "label": "Enabled Name"
+  },
+  {
    "fieldname": "api_secret",
    "fieldtype": "Data",
    "label": "API Secret"
