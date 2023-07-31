@@ -24,7 +24,8 @@
   "account_configuration_tab",
   "api_key",
   "column_break_yzm1s",
-  "api_secret"
+  "api_secret",
+  "enabled_name"
  ],
  "fields": [
   {
@@ -120,11 +121,13 @@
   {
    "fieldname": "account_configuration_tab",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Account Configuration"
   },
   {
    "fieldname": "api_key",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "API Key"
   },
   {
@@ -134,18 +137,20 @@
   {
    "fieldname": "enabled_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Enabled Name"
   },
   {
    "fieldname": "api_secret",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "API Secret"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-07-26 00:14:30.930642",
+ "modified": "2023-07-31 14:06:33.194752",
  "modified_by": "Administrator",
  "module": "Knowlarity",
  "name": "Knowlarity Settings",
