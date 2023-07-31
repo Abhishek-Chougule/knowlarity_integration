@@ -1,6 +1,6 @@
 frappe.ui.form.on('Lead', {
     refresh(frm) {
-        frm.add_custom_button(__('Knowlarity'), function () {
+        frm.add_custom_button(__('Make a Call'), function () {
             frappe.db.get_single_value('Knowlarity Settings', 'enabled').then(function(knowlarity_enabled_name) {
         var fields = [
             {
@@ -76,7 +76,7 @@ frappe.ui.form.on('Lead', {
         console.log("Error fetching knowlarity_enabled_name:", error);
     });
         }, __("Call"));
-        frm.add_custom_button(__('Get History'), function () {
+        frm.add_custom_button(__('Get Call History'), function () {
             frappe.call({
                 method:"knowlarity.api.get_call_details",
                 args:{"primary_mobile":(frm.doc.primary_mobile ? frm.doc.primary_mobile : frm.doc.mobile_no)},
