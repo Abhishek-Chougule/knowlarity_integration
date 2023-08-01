@@ -2,23 +2,24 @@ frappe.ui.form.on('Lead', {
     refresh(frm) {
         var temp = frm.doc;
         var mobileNumbers = [];
+        var mobileNumber=''
         for (var prop in temp) {
         if ((prop==="mobile_no" || prop==="alternate_mobile_number" || prop==="primary_mobile" || prop==="phone") && isValidMobileNumber(temp[prop])) {
             console.log(temp[prop])
-            var mobileNumber = temp[prop];
+            
+            if((temp[prop]).length===10)
+            {
+                mobileNumber = '+91'+temp[prop];
+            }
+            else if((temp[prop]).length===12){
+                mobileNumber = '+'+temp[prop];
+            }
+            else {
+                mobileNumber = temp[prop];
+            }
             if (!mobileNumbers.includes(mobileNumber)) {
-                if((temp[prop]).length===10)
-                {
-                    let mno='+91'+temp[prop]
-                    mobileNumbers.push(mno)
-                }
-                else if((temp[prop]).length===12){
-                    let mno='+'+temp[prop]
-                    mobileNumbers.push(mno)
-                }
-                else {
-                    mobileNumbers.push(temp[prop]);
-                }
+                
+                    mobileNumbers.push(mobileNumber)
                 
             }
         }
