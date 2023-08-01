@@ -1,7 +1,8 @@
 frappe.ui.form.on('Contact', {
     refresh(frm) {
+        frappe.db.get_single_value('Knowlarity Settings', 'enabled').then(function(knowlarity_enabled_name) {
+            if (knowlarity_enabled_name) {
         frm.add_custom_button(__('Make a Call'), function () {
-            frappe.db.get_single_value('Knowlarity Settings', 'enabled').then(function(knowlarity_enabled_name) {
                 var fields = [
                     {
                         fieldtype: 'Data',
@@ -10,7 +11,7 @@ frappe.ui.form.on('Contact', {
                         default: '+'+(frm.doc.primary_mobile ? frm.doc.primary_mobile : frm.doc.mobile_no),
                     }
                 ];
-                if (knowlarity_enabled_name) {
+                
                     fields.push({
                         fieldtype: 'Button',
                         label: '<img src="https://images.saasworthy.com/tr:w-178,h-0/knowlarity_672_logo_1604302759_o40ev.jpg" style="width:20px; height:20px;">  Knowlarity ',
@@ -58,7 +59,7 @@ frappe.ui.form.on('Contact', {
                             
                         }
                     });
-                }
+                
 
                 var d = new frappe.ui.Dialog({
                     title: 'Choose Calling Platform',
@@ -66,10 +67,7 @@ frappe.ui.form.on('Contact', {
                 });
 
                 d.show();
-            })
-            .catch(function(error) {
-                console.log("Error fetching knowlarity_enabled_name:", error);
-            });
+            
         }, __("Call"));
         frm.add_custom_button(__('Get Call History'), function () {
             frappe.call({
@@ -85,5 +83,9 @@ frappe.ui.form.on('Contact', {
               window.location.href = previousUrl;
             };
         }, __("Call"));
+    }
+    }).catch(function(error) {
+        console.log("Error fetching knowlarity_enabled_name:", error);
+    });
     }
 });
