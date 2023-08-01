@@ -1,14 +1,42 @@
 frappe.ui.form.on('Contact', {
     refresh(frm) {
+        var temp = frm.doc;
+        var mobileNumbers = [];
+        for (var prop in temp) {
+        if ((prop==="mobile_no" || prop==="alternate_mobile_number" || prop==="primary_mobile" || prop==="phone") && isValidMobileNumber(temp[prop])) {
+            console.log(temp[prop])
+            var mobileNumber = temp[prop];
+            if (!mobileNumbers.includes(mobileNumber)) {
+                if((temp[prop]).length===10)
+                {
+                    let mno='+91'+temp[prop]
+                    mobileNumbers.push(mno)
+                }
+                else if((temp[prop]).length===12){
+                    let mno='+'+temp[prop]
+                    mobileNumbers.push(mno)
+                }
+                else {
+                    mobileNumbers.push(temp[prop]);
+                }
+                
+            }
+        }
+        }
+        function isValidMobileNumber(mobile) {
+            return /^\d{10}$|^\d{12}$|^\d{13}$/.test(mobile);
+        }
+
+
         frappe.db.get_single_value('Knowlarity Settings', 'enabled').then(function(knowlarity_enabled_name) {
             if (knowlarity_enabled_name) {
         frm.add_custom_button(__('Make a Call'), function () {
                 var fields = [
                     {
-                        fieldtype: 'Data',
+                        fieldtype: 'Select',
                         fieldname: 'isselect',
-                        label: 'Enter +Country_Code and Mobile No  E.g. +919000008877',
-                        default: '+'+(frm.doc.primary_mobile ? frm.doc.primary_mobile : frm.doc.mobile_no),
+                        label: 'Mobile Number',
+                        options: mobileNumbers
                     }
                 ];
                 
