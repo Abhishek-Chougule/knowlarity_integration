@@ -12,7 +12,7 @@ app_license = "MIT"
 #         "onload": "knowlarity.api.onload"
 #     }
 # }
-app_include_js = ["/assets/knowlarity/js/contact.js","/assets/knowlarity/js/lead.js"]
+app_include_js = ["/assets/knowlarity/js/contact.js","/assets/knowlarity/js/lead.js","/assets/knowlarity/js/patient.js","/assets/knowlarity/js/customer.js"]
 
 # Includes in <head>
 # ------------------
