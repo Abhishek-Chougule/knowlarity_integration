@@ -97,7 +97,7 @@ def make_call(primary_mobile):
                 if kas.auto_agent_assign==1:
                     agent_number=lst[0]
                 else:
-                    frappe.msgprint('AMapped gent Not Available !')
+                    frappe.msgprint('Mapped Agent Not Available !')
 
         else:
             frappe.msgprint('No Agents Available !')
