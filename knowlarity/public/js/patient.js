@@ -100,7 +100,7 @@ frappe.ui.form.on('Patient', {
         frm.add_custom_button(__('Get Call History'), function () {
             frappe.call({
                 method:"knowlarity.api.get_call_details",
-                args:{"primary_mobile":(frm.doc.primary_mobile ? frm.doc.primary_mobile : frm.doc.mobile_no)},
+                args:{"primary_mobile":(frm.doc.primary_mobile ? frm.doc.primary_mobile : frm.doc.mobile)},
                 callback:function(r){}
             });
         
