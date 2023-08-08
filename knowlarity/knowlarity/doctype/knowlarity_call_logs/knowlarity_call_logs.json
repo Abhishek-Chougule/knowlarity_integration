@@ -50,6 +50,7 @@
   {
    "fieldname": "status",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Status"
   },
   {
@@ -60,7 +61,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-08-08 15:17:55.578352",
+ "modified": "2023-08-08 15:30:00.356004",
  "modified_by": "Administrator",
  "module": "Knowlarity",
  "name": "Knowlarity Call Logs",
