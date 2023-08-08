@@ -2,7 +2,10 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Knowlarity Call Logs', {
-	// refresh: function(frm) {
-
-	// }
+	download: function(frm) {
+		if(frm.doc.call_recording)
+		{
+			window.open(frm.doc.call_recording, '_blank');
+		}
+	}
 });

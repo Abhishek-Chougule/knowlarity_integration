@@ -13,6 +13,7 @@
   "start_time",
   "call_duration",
   "call_recording",
+  "download",
   "status"
  ],
  "fields": [
@@ -50,14 +51,20 @@
    "fieldname": "status",
    "fieldtype": "Data",
    "label": "Status"
+  },
+  {
+   "fieldname": "download",
+   "fieldtype": "Button",
+   "label": "Download"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-07-28 02:24:55.816284",
+ "modified": "2023-08-08 15:17:55.578352",
  "modified_by": "Administrator",
  "module": "Knowlarity",
  "name": "Knowlarity Call Logs",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -74,5 +81,6 @@
   }
  ],
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "states": []
 }
