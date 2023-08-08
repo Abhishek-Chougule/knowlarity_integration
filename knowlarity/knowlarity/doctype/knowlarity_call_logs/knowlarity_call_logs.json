@@ -10,6 +10,7 @@
   "customer_number",
   "uuid",
   "agent_number",
+  "column_break_qwds7",
   "start_time",
   "call_duration",
   "call_recording",
@@ -45,6 +46,7 @@
   {
    "fieldname": "call_recording",
    "fieldtype": "Long Text",
+   "hidden": 1,
    "label": "Call Recording"
   },
   {
@@ -56,12 +58,16 @@
   {
    "fieldname": "download",
    "fieldtype": "Button",
-   "label": "Download"
+   "label": "Download Call Recording"
+  },
+  {
+   "fieldname": "column_break_qwds7",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-08-08 15:30:00.356004",
+ "modified": "2023-08-08 15:34:11.200577",
  "modified_by": "Administrator",
  "module": "Knowlarity",
  "name": "Knowlarity Call Logs",
